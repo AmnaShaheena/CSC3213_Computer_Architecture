@@ -56,7 +56,7 @@ start:
 	
 	mov dl,al
 	add dl,48
-
+	mov ah,02h
 	int 21h
 	
 	mov dl,r
