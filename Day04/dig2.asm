@@ -19,9 +19,9 @@ start:
 	int 21h
 	
 	;read first digit
-	mov ah,01h
+	mov ah,01h ;al+2=48+2=50
 	int 21h
-	
+	mov dl,al ;dl=50
 	sub al,48
 	mov t,al	;d1=2
 	
@@ -30,7 +30,7 @@ start:
 	;read 2nd digit
 	mov ah,01h
 	int 21h
-	
+	mov dl,al
 	sub al,48
 	mov o,al	;d2=3
     
@@ -56,6 +56,7 @@ start:
 	
 	mov dl,al
 	add dl,48
+	mov ah,02h
 	int 21h
 	
 	mov dl,r
